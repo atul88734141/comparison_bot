@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Funding Rate Arbitrage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Crypto Funding Rate Arbitrage</h1>
+            <p>Compare funding rates between Binance and Delta Exchange India</p>
+        </header>
+
+        <div class="status-container">
+            <div id="status" class="status loading">
+                <i class="fas fa-sync-alt fa-spin"></i> Loading data from exchanges...
+            </div>
+            <div class="exchange-counts">
+                <span id="binance-count" class="count-badge">Binance: --</span>
+                <span id="delta-count" class="count-badge">Delta: --</span>
+            </div>
+        </div>
+        
+        <div id="loading-container" class="loading-container">
+            <div class="loading-text">Fetching data from exchanges...</div>
+            <div class="loading-bar-container">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="comparison">Comparison</button>
+            <button class="tab-btn" data-tab="binance">Binance</button>
+            <button class="tab-btn" data-tab="delta">Delta Exchange</button>
+        </div>
+
+        <div id="comparison" class="tab-content active">
+            <div class="card">
+                <h2><i class="fas fa-balance-scale"></i> Funding Rate Comparison</h2>
+                <div class="table-container">
+                    <table id="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Binance Rate</th>
+                                <th>Delta Rate</th>
+                                <th>Difference</th>
+                                <th>Binance Next (IST)</th>
+                                <th>Delta Next (IST)</th>
+                                <th>Arbitrage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="summary-container">
+                    <h3><i class="fas fa-chart-pie"></i> Summary</h3>
+                    <div id="summary-stats" class="summary-stats">
+                        <!-- Summary stats will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards-container">
+                <div class="card">
+                    <h3><i class="fas fa-fire"></i> Top 5 Positive Differences</h3>
+                    <div class="table-container">
+                        <table id="positive-table">
+                            <thead>
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Binance</th>
+                                    <th>Delta</th>
+                                    <th>Diff</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-snowflake"></i> Top 5 Negative Differences</h3>
+                    <div class="table-container">
+                        <table id="negative-table">
+                            <thead>
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Binance</th>
+                                    <th>Delta</th>
+                                    <th>Diff</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="binance" class="tab-content">
+            <div class="card">
+                <h2><i class="fab fa-bitcoin"></i> Binance Funding Rates</h2>
+                <div class="table-container">
+                    <table id="binance-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Funding Rate</th>
+                                <th>Next Funding (IST)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="delta" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-rupee-sign"></i> Delta Exchange India Funding Rates</h2>
+                <div class="table-container">
+                    <table id="delta-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Funding Rate</th>
+                                <th>Next Funding (IST)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="refresh-container">
+            <button id="refresh-btn" class="refresh-btn">
+                <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+            <span id="last-updated">Last updated: Never</span>
+        </div>
+
+        <footer>
+            <p>Created with <i class="fas fa-heart"></i> | <a href="https://github.com/" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>/html>
