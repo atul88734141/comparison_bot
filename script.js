@@ -225,8 +225,8 @@ async function fetchDeltaExchangeFunding() {
         // For GitHub Pages deployment, we'll use a CORS proxy
         // In production, you should set up your own proxy or use a backend service
         const proxyUrl = 'https://api.allorigins.win/raw?url=';
-        const response = await fetch(proxyUrl + encodeURIComponent(DELTA_API_URL));
-        
+        // const response = await fetch(proxyUrl + encodeURIComponent(DELTA_API_URL));
+        const response = await fetch(DELTA_API_URL);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         
         const jsonData = await response.json();
